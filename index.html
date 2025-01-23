@@ -1,0 +1,1289 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="panda,geisha,followgeisha,news,inspiration,designer news,layervault, dribbble, sidebar,daily,chrome extension,chrome" >
+	
+	<title>Panda</title>
+	<SCRIPT type="text/javascript" lang="javascript" src="https://cdns.gigya.com/js/gigya.js?apikey=3_f3XHhBKpihq2A1Cz59yCoD3TNV_7RUUu22A3X9UkJ5TsXCOIGVpT7Df6W5BZo8G8"></SCRIPT>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="css/style2.css" />
+    <!-- <script type="text/javascript" lang="javascript" src="index.js"></script> -->
+	 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+	 <script>
+	
+		
+$( document ).ready(function() {
+
+
+
+
+
+$(window).resize(function(){
+ 
+
+  $('#images_block_section').css('width',-$('aside.side-news').outerWidth()*1.2+$("#vv").outerWidth())
+  $('#images_block_section').css('left',$('aside.side-news').outerWidth()*1.2)
+     $('#images_block_section').css('margin-right','3opx')
+	 var page=-$('aside.side-news').outerWidth()*1.2+$("#vv").outerWidth();
+	
+	var image='310px';
+	if (page>983)
+	 {
+	       var pic_width=page/3-20;
+		       var pic_height=pic_width*1.1
+		   
+	      $('.back').css('width',pic_width)
+		   $('.back').css('height',pic_height)
+		   $('.front').css('width',pic_width)
+		    $('.front').css('height',pic_height)
+		    $('.flip-container').css('width',pic_width)
+			 $('.flip-container').css('height',pic_height)
+		
+	 }
+	 	 if(page<964 && page>888)
+		 {
+		  var pic_width=page/3-20;
+		    var pic_height=pic_width*1.1
+		   
+	      $('.back').css('width',pic_width)
+		   $('.back').css('height',pic_height)
+		   $('.front').css('width',pic_width)
+		    $('.front').css('height',pic_height)
+		    $('.flip-container').css('width',pic_width)
+			 $('.flip-container').css('height',pic_height)
+		 }
+	 if (page<888&& page>612)
+	 {
+	         var pic_width=page/2-20;
+			  var pic_height=pic_width*1.1
+	    $('.back').css('width',pic_width)
+		   $('.back').css('height',pic_height)
+		   $('.front').css('width',pic_width)
+		    $('.front').css('height',pic_height)
+		    $('.flip-container').css('width',pic_width)
+			 $('.flip-container').css('height',pic_height)
+	 }
+	 	 if (page<612)
+	 {
+	         var pic_width=page-20;
+			 var pic_height=pic_width*1.1
+	      $('.back').css('width',pic_width)
+		   $('.back').css('height',pic_height)
+		   $('.front').css('width',pic_width)
+		    $('.front').css('height',pic_height)
+		    $('.flip-container').css('width',pic_width)
+			 $('.flip-container').css('height',pic_height)
+		
+	 }
+	 
+});
+
+
+
+// To initially run the function:
+$(window).resize();
+
+
+var $scrollingDiv = $("#images_block_section");
+     $(window).scroll(function(){            
+                  
+     });
+
+
+$('div.rate').each(function(){
+    var $element = $(this);
+      var  labelText = $(this).find(':first-child').text();
+if(labelText==1)$(this).addClass('rate1');
+if(labelText==2)$(this).addClass('rate2');
+if(labelText==3)$(this).addClass('rate3');
+    }); 
+
+	 $('input.searchbox').focusin(function() {
+
+	    $(this).css('background-image', 'none')
+     
+});
+
+
+
+ $('input.searchbox').focusout(function() {
+    
+
+    $(this).css('background-image', 'url(images/find1.png)')
+
+});
+
+});
+
+function showScreen(screenSet, startScreen) {
+	gigya.accounts.showScreenSet({
+		screenSet,
+		
+	})
+} 
+
+var onGigyaServiceReady = function() {
+	gigya.accounts.addEventHandlers({
+		onLogin: function(event) {
+			onGigyaLogin();
+		},
+		onLogout: function(event) {
+			onGigyaLogout()
+		}
+	})
+
+	gigya.hasSession().then(res => {
+		if (res) {
+			onGigyaLogin();
+		} else {
+			onGigyaLogout()
+		}
+	});
+}
+
+function onGigyaLogin() {
+	$('#login').hide();
+	$('#logout').show();
+	$('#edit').show();
+	$('#register').hide()
+
+	gigya.accounts.getAccountInfo({
+		callback: res => {
+			$('#profilePicture').attr('src', res.profile.photoURL)
+		}
+	})
+}
+
+function onGigyaLogout() {
+	$('#login').show();
+	$('#logout').hide();
+	$('#edit').hide();
+	$('#register').show()
+	$('#profilePicture').attr('src',"https://thumbs.dreamstime.com/b/default-avatar-profile-vector-user-profile-default-avatar-profile-vector-user-profile-profile-179376714.jpg")
+}
+
+	 </script>
+
+	</head>
+<body>
+         <div id="pagewrap_background">
+	    <div id="pagewrap">
+		 <div id="vv">
+	<header id="page-header" class="long">
+	
+		<ul class=" sec-line">
+			<li><a href="#">Courses</a></li>
+			<li><a href="#">Webinars</a></li>
+			<li><a href="#">Short Videos</a></li> 
+			<li><a href="#">Tutorials</a></li>	<br>					
+			<li><a id="logout" href="#" style="display:none;" onclick="gigya.accounts.logout();"> Logout </a></li>
+			<li><a id="edit" href="#" style="display:none;" onclick="gigya.accounts.showScreenSet({screenSet:'Default-ProfileUpdate'});">Edit Profile</a></li>
+			<li><a id="register" href="#" onclick="gigya.accounts.showScreenSet({screenSet:'Default-RegistrationLogin', startScreen: 'gigya-register-screen'});">Register</a></li>
+			<li><a id="login" href="#" onclick="showScreen('Default-RegistrationLogin', 'gigya-login-screen');">Login</a></li>
+			<img id="profilePicture" style="border-radius:50%;height:40px;width:40px;" alt="profile picture" src="https://thumbs.dreamstime.com/b/default-avatar-profile-vector-user-profile-default-avatar-profile-vector-user-profile-profile-179376714.jpg">
+		</ul>
+		
+		<div class="logo">
+		<img src="images/logo_s.png" alt="banner"></div>
+    
+		<div id="search"><!-- search box ---------------------------------------------------------------------------------------------->
+					<form method="get" action="/search" id="search">  
+						<div id="serch-warpper">
+					<label>Sharing Our Development Knowladge</label> 
+						  <input  type="text"  required class="searchbox" placeholder="Search for videos, people, tutorials, courses and more...."/>
+						
+						</div>
+					</form>
+				</div> 
+				 <div id="header_aside"><img src="images/yaell.png" alt=""/></div> 
+	</header>
+	
+		   <div id="main_content"> 
+			<aside class="side-news"><!-- side menu news ------------------------------->
+			
+				<div class="news-title"><h1>News Feed</h1></div>
+				
+				
+				<div class="news-item ">
+					<a href="http://www.ynet.co.il" class="news-href" target="_blank">
+						<h1 class="headerTeaser">
+							Meet Microsoft's New CEO: Satya Nadella 
+						</h1>
+					</a>
+					
+				
+				</div>
+				<div class="news-item ">
+					<a href="http://www.ynet.co.il" class="news-href" target="_blank">
+						<h1 class="headerTeaser">
+							Meet Microsoft's New CEO: Satya Nadella 
+						</h1>
+					</a>
+					
+				
+				</div>
+				<div class="news-item ">
+					<a href="http://www.ynet.co.il" class="news-href" target="_blank">
+						<h1 class="headerTeaser">
+							Meet Microsoft's New CEO: Satya Nadella 
+						</h1>
+					</a>
+					
+				
+				</div>
+				<div class="news-item ">
+					<a href="http://www.ynet.co.il" class="news-href" target="_blank">
+						<h1 class="headerTeaser">
+							Meet Microsoft's New CEO: Satya Nadella 
+						</h1>
+					</a>
+					
+				
+				</div>
+				<div class="news-item ">
+					<a href="http://www.ynet.co.il" class="news-href" target="_blank">
+						<h1 class="headerTeaser">
+							Meet Microsoft's New CEO: Satya Nadella 
+						</h1>
+					</a>
+					
+				
+				</div>
+				<div class="news-item ">
+					<a href="http://www.ynet.co.il" class="news-href" target="_blank">
+						<h1 class="headerTeaser">
+							Meet Microsoft's New CEO: Satya Nadella 
+						</h1>
+					</a>
+					
+				
+				</div>
+				<div class="news-item ">
+					<a href="http://www.ynet.co.il" class="news-href" target="_blank">
+						<h1 class="headerTeaser">
+							Meet Microsoft's New CEO: Satya Nadella 
+						</h1>
+					</a>
+					
+				
+				</div><div class="news-item ">
+					<a href="http://www.ynet.co.il" class="news-href" target="_blank">
+						<h1 class="headerTeaser">
+							Meet Microsoft's New CEO: Satya Nadella 
+						</h1>
+					</a>
+					
+				
+				</div>
+				<div class="news-item ">
+					<a href="http://www.ynet.co.il" class="news-href" target="_blank">
+						<h1 class="headerTeaser">
+							Meet Microsoft's New CEO: Satya Nadella 
+						</h1>
+					</a>
+					
+				
+				</div>
+				<div class="news-item ">
+					<a href="http://www.ynet.co.il" class="news-href" target="_blank">
+						<h1 class="headerTeaser">
+							Meet Microsoft's New CEO: Satya Nadella 
+						</h1>
+					</a>
+					
+				
+				</div>
+				<div class="news-item ">
+					<a href="http://www.ynet.co.il" class="news-href" target="_blank">
+						<h1 class="headerTeaser">
+							Meet Microsoft's New CEO: Satya Nadella 
+						</h1>
+					</a>
+					
+				
+				</div>
+				<div class="news-item ">
+					<a href="http://www.ynet.co.il" class="news-href" target="_blank">
+						<h1 class="headerTeaser">
+							Meet Microsoft's New CEO: Satya Nadella 
+						</h1>
+					</a>
+					
+				
+				</div>
+				
+				</aside>
+	<div id="ma7in">
+	<section id ="images_block_section"> 
+	<div class="allDev">
+		<div class="cube flip-container" >
+		           <div class="flipper">
+				    <div class="front">
+						<div class="block-body-div">
+						
+												
+							<div class="text-warpper">
+									
+								<h1>Server-side JavaScript</h1>
+								<p class="profile-text">
+								Changed in version 2.4: The V8 JavaScript engine,
+								which became the default in 2.4, allows multiple 
+								JavaScript operations to execute at the same time
+								</p>
+								<div class="text-footer">
+								<em class="dev">Eli the Computer Guy</em>
+								<em class="date">21.4.2014</em>
+								</div>
+						   </div>
+						</div>
+					
+						<div class="footer-cube">
+							<div class="footer-cube-warpper">
+							<!-- first sequare -- =>image profile------>
+								<div class="block-image-div small-profile-pic">   
+									<img src="images/profile_pic1.png" class="profile_pic" alt="Smiley face">	
+								</div>
+					       <!-- secound sequare -- =>character------>
+								
+								<div class="character"> 	
+										<img src="images/img_footer1.png"/>	
+								</div>
+						   <!-- third sequare -- =>rate------>
+					
+								<div class="block-image-div rate">
+									
+									<label class="rate-value" style="display:none">1</label>
+								</div>
+
+							</div>
+					   </div>
+					</div>
+					<div class="back">
+							<div class="block-body-div ">
+									<div class="text-warpper">
+									
+								<h1>Server-side JavaScript</h1>
+								<p class="profile-text">
+								Changed in version 2.4: The V8 JavaScript engine,
+								which became the default in 2.4, allows multiple 
+								JavaScript operations to execute at the same time
+								</p>
+								<div class="text-footer">
+								<em class="dev">Eli the Computer Guy</em>
+								<em class="date">21.4.2014</em>
+								</div>
+						   </div>
+						
+							</div>
+						<div class="footer-cube">
+							<div class="footer-cube-warpper">
+							<!-- first sequare -- =>videos------>
+							       <label class="footer-title">Screen Cast</label>
+								<ul>
+								
+									<li> View</li>
+									<li><h1 class="view-number">56,223,223</h1></li>
+									<li> Run Hour</li>
+									<li><h1 class="runhour">8:56</h1></li>
+								</ul>	
+
+							</div>
+					   </div>
+					</div>
+	
+				  
+		          </div>
+		</div>
+		
+				<div class="cube flip-container" >
+		           <div class="flipper">
+				    <div class="front">
+						<div class="block-body-div">
+						
+												
+							<div class="text-warpper">
+									
+								<h1>Server-side JavaScript</h1>
+								<p class="profile-text">
+								Changed in version 2.4: The V8 JavaScript engine,
+								which became the default in 2.4, allows multiple 
+								JavaScript operations to execute at the same time
+								</p>
+								<div class="text-footer">
+								<em class="dev">Eli the Computer Guy</em>
+								<em class="date">21.4.2014</em>
+								</div>
+						   </div>
+						</div>
+					
+						<div class="footer-cube">
+							<div class="footer-cube-warpper">
+							<!-- first sequare -- =>image profile------>
+								<div class="block-image-div small-profile-pic">   
+									<img src="images/profile_pic1.png" class="profile_pic" alt="Smiley face">	
+								</div>
+					       <!-- secound sequare -- =>character------>
+								
+								<div class="character"> 	
+										<img src="images/img_footer1.png"/>	
+								</div>
+						   <!-- third sequare -- =>rate------>
+					
+								<div class="block-image-div rate">
+									
+									<label class="rate-value" style="display:none">1</label>
+								</div>
+
+							</div>
+					   </div>
+					</div>
+					<div class="back">
+							<div class="block-body-div ">
+									<div class="text-warpper">
+									
+								<h1>Server-side JavaScript</h1>
+								<p class="profile-text">
+								Changed in version 2.4: The V8 JavaScript engine,
+								which became the default in 2.4, allows multiple 
+								JavaScript operations to execute at the same time
+								</p>
+								<div class="text-footer">
+								<em class="dev">Eli the Computer Guy</em>
+								<em class="date">21.4.2014</em>
+								</div>
+						   </div>
+						
+							</div>
+						<div class="footer-cube">
+							<div class="footer-cube-warpper">
+							<!-- first sequare -- =>videos------>
+							       <label class="footer-title">Screen Cast</label>
+								<ul>
+								
+									<li> View</li>
+									<li><h1 class="view-number">56,223,223</h1></li>
+									<li> Run Hour</li>
+									<li><h1 class="runhour">8:56</h1></li>
+								</ul>	
+
+							</div>
+					   </div>
+					</div>
+	
+				  
+		          </div>
+		</div>
+		<div class="cube flip-container" >
+		           <div class="flipper">
+				    <div class="front">
+						<div class="block-body-div">
+						
+												
+							<div class="text-warpper">
+									
+								<h1>Server-side JavaScript</h1>
+								<p class="profile-text">
+								Changed in version 2.4: The V8 JavaScript engine,
+								which became the default in 2.4, allows multiple 
+								JavaScript operations to execute at the same time
+								</p>
+								<div class="text-footer">
+								<em class="dev">Eli the Computer Guy</em>
+								<em class="date">21.4.2014</em>
+								</div>
+						   </div>
+						</div>
+					
+						<div class="footer-cube">
+							<div class="footer-cube-warpper">
+							<!-- first sequare -- =>image profile------>
+								<div class="block-image-div small-profile-pic">   
+									<img src="images/profile_pic1.png" class="profile_pic" alt="Smiley face">	
+								</div>
+					       <!-- secound sequare -- =>character------>
+								
+								<div class="character"> 	
+										<img src="images/img_footer1.png"/>	
+								</div>
+						   <!-- third sequare -- =>rate------>
+					
+								<div class="block-image-div rate">
+									
+									<label class="rate-value" style="display:none">1</label>
+								</div>
+
+							</div>
+					   </div>
+					</div>
+					<div class="back">
+							<div class="block-body-div ">
+									<div class="text-warpper">
+									
+								<h1>Server-side JavaScript</h1>
+								<p class="profile-text">
+								Changed in version 2.4: The V8 JavaScript engine,
+								which became the default in 2.4, allows multiple 
+								JavaScript operations to execute at the same time
+								</p>
+								<div class="text-footer">
+								<em class="dev">Eli the Computer Guy</em>
+								<em class="date">21.4.2014</em>
+								</div>
+						   </div>
+						
+							</div>
+						<div class="footer-cube">
+							<div class="footer-cube-warpper">
+							<!-- first sequare -- =>videos------>
+							       <label class="footer-title">Screen Cast</label>
+								<ul>
+								
+									<li> View</li>
+									<li><h1 class="view-number">56,223,223</h1></li>
+									<li> Run Hour</li>
+									<li><h1 class="runhour">8:56</h1></li>
+								</ul>	
+
+							</div>
+					   </div>
+					</div>
+	
+				  
+		          </div>
+		</div>
+		
+				<div class="cube flip-container" >
+		           <div class="flipper">
+				    <div class="front">
+						<div class="block-body-div">
+						
+												
+							<div class="text-warpper">
+									
+								<h1>Server-side JavaScript</h1>
+								<p class="profile-text">
+								Changed in version 2.4: The V8 JavaScript engine,
+								which became the default in 2.4, allows multiple 
+								JavaScript operations to execute at the same time
+								</p>
+								<div class="text-footer">
+								<em class="dev">Eli the Computer Guy</em>
+								<em class="date">21.4.2014</em>
+								</div>
+						   </div>
+						</div>
+					
+						<div class="footer-cube">
+							<div class="footer-cube-warpper">
+							<!-- first sequare -- =>image profile------>
+								<div class="block-image-div small-profile-pic">   
+									<img src="images/profile_pic1.png" class="profile_pic" alt="Smiley face">	
+								</div>
+					       <!-- secound sequare -- =>character------>
+								
+								<div class="character"> 	
+										<img src="images/img_footer1.png"/>	
+								</div>
+						   <!-- third sequare -- =>rate------>
+					
+								<div class="block-image-div rate">
+									
+									<label class="rate-value" style="display:none">1</label>
+								</div>
+
+							</div>
+					   </div>
+					</div>
+					<div class="back">
+							<div class="block-body-div ">
+									<div class="text-warpper">
+									
+								<h1>Server-side JavaScript</h1>
+								<p class="profile-text">
+								Changed in version 2.4: The V8 JavaScript engine,
+								which became the default in 2.4, allows multiple 
+								JavaScript operations to execute at the same time
+								</p>
+								<div class="text-footer">
+								<em class="dev">Eli the Computer Guy</em>
+								<em class="date">21.4.2014</em>
+								</div>
+						   </div>
+						
+							</div>
+						<div class="footer-cube">
+							<div class="footer-cube-warpper">
+							<!-- first sequare -- =>videos------>
+							       <label class="footer-title">Screen Cast</label>
+								<ul>
+								
+									<li> View</li>
+									<li><h1 class="view-number">56,223,223</h1></li>
+									<li> Run Hour</li>
+									<li><h1 class="runhour">8:56</h1></li>
+								</ul>	
+
+							</div>
+					   </div>
+					</div>
+	
+				  
+		          </div>
+		</div>
+		<div class="cube flip-container" >
+		           <div class="flipper">
+				    <div class="front">
+						<div class="block-body-div">
+						
+												
+							<div class="text-warpper">
+									
+								<h1>Server-side JavaScript</h1>
+								<p class="profile-text">
+								Changed in version 2.4: The V8 JavaScript engine,
+								which became the default in 2.4, allows multiple 
+								JavaScript operations to execute at the same time
+								</p>
+								<div class="text-footer">
+								<em class="dev">Eli the Computer Guy</em>
+								<em class="date">21.4.2014</em>
+								</div>
+						   </div>
+						</div>
+					
+						<div class="footer-cube">
+							<div class="footer-cube-warpper">
+							<!-- first sequare -- =>image profile------>
+								<div class="block-image-div small-profile-pic">   
+									<img src="images/profile_pic1.png" class="profile_pic" alt="Smiley face">	
+								</div>
+					       <!-- secound sequare -- =>character------>
+								
+								<div class="character"> 	
+										<img src="images/img_footer1.png"/>	
+								</div>
+						   <!-- third sequare -- =>rate------>
+					
+								<div class="block-image-div rate">
+									
+									<label class="rate-value" style="display:none">1</label>
+								</div>
+
+							</div>
+					   </div>
+					</div>
+					<div class="back">
+							<div class="block-body-div ">
+									<div class="text-warpper">
+									
+								<h1>Server-side JavaScript</h1>
+								<p class="profile-text">
+								Changed in version 2.4: The V8 JavaScript engine,
+								which became the default in 2.4, allows multiple 
+								JavaScript operations to execute at the same time
+								</p>
+								<div class="text-footer">
+								<em class="dev">Eli the Computer Guy</em>
+								<em class="date">21.4.2014</em>
+								</div>
+						   </div>
+						
+							</div>
+						<div class="footer-cube">
+							<div class="footer-cube-warpper">
+							<!-- first sequare -- =>videos------>
+							       <label class="footer-title">Screen Cast</label>
+								<ul>
+								
+									<li> View</li>
+									<li><h1 class="view-number">56,223,223</h1></li>
+									<li> Run Hour</li>
+									<li><h1 class="runhour">8:56</h1></li>
+								</ul>	
+
+							</div>
+					   </div>
+					</div>
+	
+				  
+		          </div>
+		</div>
+		
+				<div class="cube flip-container" >
+		           <div class="flipper">
+				    <div class="front">
+						<div class="block-body-div">
+						
+												
+							<div class="text-warpper">
+									
+								<h1>Server-side JavaScript</h1>
+								<p class="profile-text">
+								Changed in version 2.4: The V8 JavaScript engine,
+								which became the default in 2.4, allows multiple 
+								JavaScript operations to execute at the same time
+								</p>
+								<div class="text-footer">
+								<em class="dev">Eli the Computer Guy</em>
+								<em class="date">21.4.2014</em>
+								</div>
+						   </div>
+						</div>
+					
+						<div class="footer-cube">
+							<div class="footer-cube-warpper">
+							<!-- first sequare -- =>image profile------>
+								<div class="block-image-div small-profile-pic">   
+									<img src="images/profile_pic1.png" class="profile_pic" alt="Smiley face">	
+								</div>
+					       <!-- secound sequare -- =>character------>
+								
+								<div class="character"> 	
+										<img src="images/img_footer1.png"/>	
+								</div>
+						   <!-- third sequare -- =>rate------>
+					
+								<div class="block-image-div rate">
+									
+									<label class="rate-value" style="display:none">1</label>
+								</div>
+
+							</div>
+					   </div>
+					</div>
+					<div class="back">
+							<div class="block-body-div ">
+									<div class="text-warpper">
+									
+								<h1>Server-side JavaScript</h1>
+								<p class="profile-text">
+								Changed in version 2.4: The V8 JavaScript engine,
+								which became the default in 2.4, allows multiple 
+								JavaScript operations to execute at the same time
+								</p>
+								<div class="text-footer">
+								<em class="dev">Eli the Computer Guy</em>
+								<em class="date">21.4.2014</em>
+								</div>
+						   </div>
+						
+							</div>
+						<div class="footer-cube">
+							<div class="footer-cube-warpper">
+							<!-- first sequare -- =>videos------>
+							       <label class="footer-title">Screen Cast</label>
+								<ul>
+								
+									<li> View</li>
+									<li><h1 class="view-number">56,223,223</h1></li>
+									<li> Run Hour</li>
+									<li><h1 class="runhour">8:56</h1></li>
+								</ul>	
+
+							</div>
+					   </div>
+					</div>
+	
+				  
+		          </div>
+		</div>
+
+         <div class="cube flip-container" >
+		           <div class="flipper">
+				    <div class="front">
+						<div class="block-body-div">
+						
+												
+							<div class="text-warpper">
+									
+								<h1>Server-side JavaScript</h1>
+								<p class="profile-text">
+								Changed in version 2.4: The V8 JavaScript engine,
+								which became the default in 2.4, allows multiple 
+								JavaScript operations to execute at the same time
+								</p>
+								<div class="text-footer">
+								<em class="dev">Eli the Computer Guy</em>
+								<em class="date">21.4.2014</em>
+								</div>
+						   </div>
+						</div>
+					
+						<div class="footer-cube">
+							<div class="footer-cube-warpper">
+							<!-- first sequare -- =>image profile------>
+								<div class="block-image-div small-profile-pic">   
+									<img src="images/profile_pic1.png" class="profile_pic" alt="Smiley face">	
+								</div>
+					       <!-- secound sequare -- =>character------>
+								
+								<div class="character"> 	
+										<img src="images/img_footer1.png"/>	
+								</div>
+						   <!-- third sequare -- =>rate------>
+					
+								<div class="block-image-div rate">
+									
+									<label class="rate-value" style="display:none">1</label>
+								</div>
+
+							</div>
+					   </div>
+					</div>
+					<div class="back">
+							<div class="block-body-div ">
+									<div class="text-warpper">
+									
+								<h1>Server-side JavaScript</h1>
+								<p class="profile-text">
+								Changed in version 2.4: The V8 JavaScript engine,
+								which became the default in 2.4, allows multiple 
+								JavaScript operations to execute at the same time
+								</p>
+								<div class="text-footer">
+								<em class="dev">Eli the Computer Guy</em>
+								<em class="date">21.4.2014</em>
+								</div>
+						   </div>
+						
+							</div>
+						<div class="footer-cube">
+							<div class="footer-cube-warpper">
+							<!-- first sequare -- =>videos------>
+							       <label class="footer-title">Screen Cast</label>
+								<ul>
+								
+									<li> View</li>
+									<li><h1 class="view-number">56,223,223</h1></li>
+									<li> Run Hour</li>
+									<li><h1 class="runhour">8:56</h1></li>
+								</ul>	
+
+							</div>
+					   </div>
+					</div>
+	
+				  
+		          </div>
+		</div>
+		
+				<div class="cube flip-container" >
+		           <div class="flipper">
+				    <div class="front">
+						<div class="block-body-div">
+						
+												
+							<div class="text-warpper">
+									
+								<h1>Server-side JavaScript</h1>
+								<p class="profile-text">
+								Changed in version 2.4: The V8 JavaScript engine,
+								which became the default in 2.4, allows multiple 
+								JavaScript operations to execute at the same time
+								</p>
+								<div class="text-footer">
+								<em class="dev">Eli the Computer Guy</em>
+								<em class="date">21.4.2014</em>
+								</div>
+						   </div>
+						</div>
+					
+						<div class="footer-cube">
+							<div class="footer-cube-warpper">
+							<!-- first sequare -- =>image profile------>
+								<div class="block-image-div small-profile-pic">   
+									<img src="images/profile_pic1.png" class="profile_pic" alt="Smiley face">	
+								</div>
+					       <!-- secound sequare -- =>character------>
+								
+								<div class="character"> 	
+										<img src="images/img_footer1.png"/>	
+								</div>
+						   <!-- third sequare -- =>rate------>
+					
+								<div class="block-image-div rate">
+									
+									<label class="rate-value" style="display:none">1</label>
+								</div>
+
+							</div>
+					   </div>
+					</div>
+					<div class="back">
+							<div class="block-body-div ">
+									<div class="text-warpper">
+									
+								<h1>Server-side JavaScript</h1>
+								<p class="profile-text">
+								Changed in version 2.4: The V8 JavaScript engine,
+								which became the default in 2.4, allows multiple 
+								JavaScript operations to execute at the same time
+								</p>
+								<div class="text-footer">
+								<em class="dev">Eli the Computer Guy</em>
+								<em class="date">21.4.2014</em>
+								</div>
+						   </div>
+						
+							</div>
+						<div class="footer-cube">
+							<div class="footer-cube-warpper">
+							<!-- first sequare -- =>videos------>
+							       <label class="footer-title">Screen Cast</label>
+								<ul>
+								
+									<li> View</li>
+									<li><h1 class="view-number">56,223,223</h1></li>
+									<li> Run Hour</li>
+									<li><h1 class="runhour">8:56</h1></li>
+								</ul>	
+
+							</div>
+					   </div>
+					</div>
+	
+				  
+		          </div>
+		</div>
+		<div class="cube flip-container" >
+		           <div class="flipper">
+				    <div class="front">
+						<div class="block-body-div">
+						
+												
+							<div class="text-warpper">
+									
+								<h1>Server-side JavaScript</h1>
+								<p class="profile-text">
+								Changed in version 2.4: The V8 JavaScript engine,
+								which became the default in 2.4, allows multiple 
+								JavaScript operations to execute at the same time
+								</p>
+								<div class="text-footer">
+								<em class="dev">Eli the Computer Guy</em>
+								<em class="date">21.4.2014</em>
+								</div>
+						   </div>
+						</div>
+					
+						<div class="footer-cube">
+							<div class="footer-cube-warpper">
+							<!-- first sequare -- =>image profile------>
+								<div class="block-image-div small-profile-pic">   
+									<img src="images/profile_pic1.png" class="profile_pic" alt="Smiley face">	
+								</div>
+					       <!-- secound sequare -- =>character------>
+								
+								<div class="character"> 	
+										<img src="images/img_footer1.png"/>	
+								</div>
+						   <!-- third sequare -- =>rate------>
+					
+								<div class="block-image-div rate">
+									
+									<label class="rate-value" style="display:none">1</label>
+								</div>
+
+							</div>
+					   </div>
+					</div>
+					<div class="back">
+							<div class="block-body-div ">
+									<div class="text-warpper">
+									
+								<h1>Server-side JavaScript</h1>
+								<p class="profile-text">
+								Changed in version 2.4: The V8 JavaScript engine,
+								which became the default in 2.4, allows multiple 
+								JavaScript operations to execute at the same time
+								</p>
+								<div class="text-footer">
+								<em class="dev">Eli the Computer Guy</em>
+								<em class="date">21.4.2014</em>
+								</div>
+						   </div>
+						
+							</div>
+						<div class="footer-cube">
+							<div class="footer-cube-warpper">
+							<!-- first sequare -- =>videos------>
+							       <label class="footer-title">Screen Cast</label>
+								<ul>
+								
+									<li> View</li>
+									<li><h1 class="view-number">56,223,223</h1></li>
+									<li> Run Hour</li>
+									<li><h1 class="runhour">8:56</h1></li>
+								</ul>	
+
+							</div>
+					   </div>
+					</div>
+	
+				  
+		          </div>
+		</div>
+		
+				<div class="cube flip-container" >
+		           <div class="flipper">
+				    <div class="front">
+						<div class="block-body-div">
+						
+												
+							<div class="text-warpper">
+									
+								<h1>Server-side JavaScript</h1>
+								<p class="profile-text">
+								Changed in version 2.4: The V8 JavaScript engine,
+								which became the default in 2.4, allows multiple 
+								JavaScript operations to execute at the same time
+								</p>
+								<div class="text-footer">
+								<em class="dev">Eli the Computer Guy</em>
+								<em class="date">21.4.2014</em>
+								</div>
+						   </div>
+						</div>
+					
+						<div class="footer-cube">
+							<div class="footer-cube-warpper">
+							<!-- first sequare -- =>image profile------>
+								<div class="block-image-div small-profile-pic">   
+									<img src="images/profile_pic1.png" class="profile_pic" alt="Smiley face">	
+								</div>
+					       <!-- secound sequare -- =>character------>
+								
+								<div class="character"> 	
+										<img src="images/img_footer1.png"/>	
+								</div>
+						   <!-- third sequare -- =>rate------>
+					
+								<div class="block-image-div rate">
+									
+									<label class="rate-value" style="display:none">3</label>
+								</div>
+
+							</div>
+					   </div>
+					</div>
+					<div class="back">
+							<div class="block-body-div ">
+									<div class="text-warpper">
+									
+								<h1>Server-side JavaScript</h1>
+								<p class="profile-text">
+								Changed in version 2.4: The V8 JavaScript engine,
+								which became the default in 2.4, allows multiple 
+								JavaScript operations to execute at the same time
+								</p>
+								<div class="text-footer">
+								<em class="dev">Eli the Computer Guy</em>
+								<em class="date">21.4.2014</em>
+								</div>
+						   </div>
+						
+							</div>
+						<div class="footer-cube">
+							<div class="footer-cube-warpper">
+							<!-- first sequare -- =>videos------>
+							       <label class="footer-title">Screen Cast</label>
+								<ul>
+								
+									<li> View</li>
+									<li><h1 class="view-number">56,223,223</h1></li>
+									<li> Run Hour</li>
+									<li><h1 class="runhour">8:56</h1></li>
+								</ul>	
+
+							</div>
+					   </div>
+					</div>
+	
+				  
+		          </div>
+		</div>
+		
+		<div class="cube flip-container" >
+		           <div class="flipper">
+				    <div class="front">
+						<div class="block-body-div">
+						
+												
+							<div class="text-warpper">
+									
+								<h1>Server-side JavaScript</h1>
+								<p class="profile-text">
+								Changed in version 2.4: The V8 JavaScript engine,
+								which became the default in 2.4, allows multiple 
+								JavaScript operations to execute at the same time
+								</p>
+								<div class="text-footer">
+								<em class="dev">Eli the Computer Guy</em>
+								<em class="date">21.4.2014</em>
+								</div>
+						   </div>
+						</div>
+					
+						<div class="footer-cube">
+							<div class="footer-cube-warpper">
+							<!-- first sequare -- =>image profile------>
+								<div class="block-image-div small-profile-pic">   
+									<img src="images/profile_pic1.png" class="profile_pic" alt="Smiley face">	
+								</div>
+					       <!-- secound sequare -- =>character------>
+								
+								<div class="character"> 	
+										<img src="images/img_footer1.png"/>	
+								</div>
+						   <!-- third sequare -- =>rate------>
+					
+								<div class="block-image-div rate">
+									
+									<label class="rate-value" style="display:none">2</label>
+								</div>
+
+							</div>
+					   </div>
+					</div>
+					<div class="back">
+							<div class="block-body-div ">
+									<div class="text-warpper">
+									
+								<h1>Server-side JavaScript</h1>
+								<p class="profile-text">
+								Changed in version 2.4: The V8 JavaScript engine,
+								which became the default in 2.4, allows multiple 
+								JavaScript operations to execute at the same time
+								</p>
+								<div class="text-footer">
+								<em class="dev">Eli the Computer Guy</em>
+								<em class="date">21.4.2014</em>
+								</div>
+						   </div>
+						
+							</div>
+						<div class="footer-cube">
+							<div class="footer-cube-warpper">
+							<!-- first sequare -- =>videos------>
+							       <label class="footer-title">Screen Cast</label>
+								<ul>
+								
+									<li> View</li>
+									<li><h1 class="view-number">56,223,223</h1></li>
+									<li> Run Hour</li>
+									<li><h1 class="runhour">8:56</h1></li>
+								</ul>	
+
+							</div>
+					   </div>
+					</div>
+	
+				  
+		          </div>
+		</div>
+		
+				<div class="cube flip-container" >
+		           <div class="flipper">
+				    <div class="front">
+						<div class="block-body-div">
+						
+												
+							<div class="text-warpper">
+									
+								<h1>Server-side JavaSc999999999999999999999999999999999999999999999999999999999999999999999999999ript</h1>
+								<p class="profile-text">
+								bChanged in version 2.4: The V8 JavaScript engine,
+								which became the default in 2.4, allows multiple 
+								JavaScript operations to execute at the same time
+								</p>
+								<div class="text-footer">
+								<em class="dev">Eli the Computer Guy</em>
+								<em class="date">21.4.2014</em>
+								</div>
+						   </div>
+						</div>
+					
+						<div class="footer-cube">
+							<div class="footer-cube-warpper">
+							<!-- first sequare -- =>image profile------>
+								<div class="block-image-div small-profile-pic">   
+									<img src="images/profile_pic1.png" class="profile_pic" alt="Smiley face">	
+								</div>
+					       <!-- secound sequare -- =>character------>
+								
+								<div class="character"> 	
+										<img src="images/img_footer1.png"/>	
+								</div>
+						   <!-- third sequare -- =>rate------>
+					
+								<div class="block-image-div rate">
+									
+									<label class="rate-value" style="display:none">1</label>
+								</div>
+
+							</div>
+					   </div>
+					</div>
+					<div class="back">
+							<div class="block-body-div ">
+									<div class="text-warpper">
+									
+								<h1>Server-side JavaScriptServer-side JavaScriptServer-side JavaScriptServer-side JavaScriptServer-side JavaScriptServer-side JavaScript</h1>
+								<p class="profile-text">
+								Changed in version 2.4: The V8 JavaScript engine,
+								which became the default in 2.4, allows multiple 
+								JavaScript operations to execute at the same time
+								</p>
+								<div class="text-footer">
+								<em class="dev">Eli the Computer Guy</em>
+								<em class="date">21.4.2014</em>
+								</div>
+						   </div>
+						
+							</div>
+						<div class="footer-cube">
+							<div class="footer-cube-warpper">
+							<!-- first sequare -- =>videos------>
+							       <label class="footer-title">Screen Cast</label>
+								<ul>
+								
+									<li> View</li>
+									<li><h1 class="view-number">56,223,223</h1></li>
+									<li> Run Hour</li>
+									<li><h1 class="runhour">8:56</h1></li>
+								</ul>	
+
+							</div>
+					   </div>
+					</div>
+	
+				  
+		          </div>
+		</div>
+		
+		
+	
+			
+
+	
+			
+	</div>		
+ </section>
+	</div>
+	<div id="button_prev"><a href="#"></a></div>
+	<div id="button_next"><a href="#"></a></div>
+	
+	</div>
+	
+	<footer></footer>
+	</div>
+	</div>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script> -->
+
+	</body>
+</html>

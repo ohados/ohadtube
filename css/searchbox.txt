@@ -1,0 +1,114 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;/* vertical-align:baseline; */background:transparent;outline: none;}
+ol,ul{list-style:none;outline: none}
+#pagewrap {background-image:url('../images/background.png');background-repeat:no-repeat;min-height:1004px;background-size: 130% 100%; margin: auto;min-height:100%;max-width: 1900px;z-index:-1;background-position:center;}
+#pagewrap_background {background-color:grey;overflow-x: auto;min-height: 2000px;}
+
+
+
+ header{width:100%;position:relative;height:540px;z-index:20;overflow:hidden;}
+/*logo*/
+body header .logo{float:left;margin-left:15px;margin-top:-10px;color:#3b434f;font-size:20px;height:40px;line-height:43px;}
+.ie10 div{width:90px;height:50px;background-color:blue}
+
+/*login-nav*/
+body header .top-right{margin-top:11px;}
+body header .top-right li{float:right;display:inline;}
+body header .top-right li span{margin-right:15px;color:#727373}
+body header .top-right a{text-decoration:none;font-size:120%;color:white;float:left;width:110px;height:40px;line-height:40px;text-align:center;margin-top:1px;margin-right:15px;display:block}
+body header .top-right a.gapps-link{display:none;}
+body header .top-right a.jobs-link i{font-size:18px;top:2px;position:relative}
+body header .top-right li:nth-child(1) a,body header .top-right li:nth-child(2)  a{width:26px;}
+/*menu-nav*/                
+body header .sec-line	{margin-top:67px;clear:both;}
+body header .sec-line li{float:right;display:inline;}
+body header .sec-line li span{margin-right:15px;color:#727373}
+body header .sec-line a{padding-left:5px;text-decoration:none;font-size:130%;color:white;float:left;width:56px;height:40px;line-height:40px;text-align:right;margin-top:1px;margin-right:25px;display:block;clear:both;}
+body header .sec-line a.gapps-link{display:none;}
+body header .sec-line a.jobs-link i{font-size:18px;top:2px;position:relative}
+body header .sec-line li:nth-child(1) a{width:130px;margin-right:15px;}
+
+
+#search form {position:relative; clear:both; float:left;margin-left: 19% ;margin-top:220px; ;width:50%;}
+#search label{ color:white;display:block;font-weight:bold;  margin-left:18% ; margin-top: 9% ;white-space: nowrap; margin-bottom:2% }
+#search input[type="text"] {position:relative;background: white;border-top: 1px solid #757575;border-left: 1px solid #757575;background: white url('../images/magnifyellow.png') 98.5% 50% no-repeat;	background-size:5%;
+-moz-box-shadow: inset 6px 10px 20px -8px #100F0F;
+-webkit-box-shadow: inset 10px 6px 20px -8px #100F0F;
+box-shadow: inset 6px 10px 20px -8px #100F0F;	-moz-box-sizing: content-box;	box-sizing: content-box;
+padding: 2%;padding-right:6%;outline: none;width: 100%;position:relative;}
+
+
+#search input:focus {background-image:none;}
+.searchbox:not(:focus) ~ .close-icon {display: none;}
+.searchbox:focus ~ .close-icon {display: inline-block;}*/
+
+ /*#search input:not(:focus) ~ .close-icon{display:none;}*/
+ 
+	 /*.searchbox:not(:valid) ~ .close-icon  {
+	display: none;
+}
+.searchbox::-ms-clear {
+    display: none;
+}
+*/
+input[type="search"]::-webkit-search-cancel-button {
+
+  /* Remove default */
+  -webkit-appearance: none;
+    
+  /* Now your own custom styles */
+  height: 10px;
+  width: 10px;
+  background: red;
+  /* Will place small red box on the right of input (positioning carries over) */
+
+}
+.close-icon {
+	border:0px solid transparent;
+	left:-145px;
+	margin-top:-145px;
+	
+	background-color: transparent;
+	display: inline-block;
+	vertical-align: middle;
+  outline: 0;
+  font-size:130%;
+  cursor: pointer;
+
+}
+.close-icon:after {
+   border:0px solid ;
+	content: "";
+	font-size:44px;
+	 font-weight: bold;
+	display: block;
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	background: transparent url('../images/x.png') 98.5% 50% no-repeat;	background-size:30px;
+	z-index:1;
+	right:-6%;
+	bottom:40%;
+	margin: auto;
+	padding: 2px;
+	text-align: center;
+	color: white;
+	font-weight: normal;
+
+
+	cursor: pointer;
+
+}
+
+
+
+
+
+#header_aside {float:left;width:14%;margin-top:3%;margin-left:6%}
+#header_aside img{width:100%;}
+
+
+::-webkit-input-placeholder { padding-left:2% ;}
+::-moz-placeholder { padding-left: 2%; } /* firefox 19+ */
+:-ms-input-placeholder {padding-left: 2%; } /* ie */
+input:-moz-placeholder { padding-left: 2%;}
+#search-button img{width:100%;}
